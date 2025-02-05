@@ -6,8 +6,7 @@ WORKDIR /app
 COPY . /app
 
 RUN pip install -r requirements.txt
-RUN chmod +x entrypoint.sh
 
 EXPOSE 8080
 
-CMD ["./entrypoint.sh"]
+CMD dvc repro && python3 app.py
